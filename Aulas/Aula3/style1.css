@@ -1,0 +1,72 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color: beige;
+}
+
+/*
+* {
+    margin: 0;
+    padding: 0;
+} pega em todos os elementos da página e tira as margens e os espaçamentos deles */
+
+* {
+    box-sizing: border-box;
+} /* padroniza o tamanho dos box de acordo com o tamanho declarado. ele faz com q o margin e o padding não influencie no tamanho declarado, evitando um calculo a mais para o dev */
+
+.container {
+    width: 1120px;
+    height: 100%;
+    background-color: #963d3d;
+    margin: auto;
+}
+
+/*.container:after {
+    content:"asd";
+    display: block;
+    clear:both
+} método 2 para: limpar o float, fazendo com que o container enxergue os elementos flutuantes*/
+
+.cabecalho {
+    clear: both;
+    height: 80px;
+}
+
+.rodape {
+    clear: both;
+    background-color: aqua;
+}
+
+.box{
+    border: 1px solid #000000;
+    /*margin-bottom: 10px;*/
+    height: 100%;
+}
+
+.box-1{
+    background-color: #f5f5f5;
+    width: 20%;
+    float: left;
+}
+
+.box-2{
+    background-color: #999999;
+    width: 50%;
+    float: left;
+/*display: none; faz ele desaparecer (elimina da página) */
+/*visibility: hiden; só deixa o elemento escondido, mas ele ocupa espaço */
+}
+
+.box-3{
+    background-color: #dddddd;
+    width: 30%;
+    float: right;
+}
+
+/*.clear{
+    clear: both; 
+} faz o container voltar*/

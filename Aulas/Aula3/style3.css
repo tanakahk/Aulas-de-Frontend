@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: bisque;
+}
+
+.cabecalho {
+    height: 80px;
+    text-align: center;
+}
+
+.container {
+    height: 100%; /*com o vh é possível quebrar os conteúdos, o layout não vai esticar na página. vh = % em medidas. Da para definir largura usando o vw no lugar do vh.*/
+    width: 800px; /*antes era 1120px*/
+    background-color: rgb(105, 121, 165);
+    margin: auto;
+}
+
+.grid {
+    display: flex;
+    height: 100%;
+}
+
+.menu, .sidebar {
+    background-color: gray;
+    flex-basis: 20%;
+    /*flex: 0 0 20%;*/
+    padding: 30px 20px;
+}
+
+.content {
+    background-color: orange;
+    flex-basis: 60%;
+    /*flex: 1;*/
+    padding: 30px 20px;
+}
+
+@media /*antes tinha aqui: onldy screen an*/ (max-width: 1120px) {
+    .container {
+        width: 100%;
+    }
+    
+    .grid {
+        display: block;
+    }
+
+    .menu .sidebar .content{
+        flex-basis: auto;
+        width: 100%;
+        display: block;
+    }
+}

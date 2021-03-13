@@ -1,0 +1,58 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    background-color: aqua;
+    height: 300px;
+    align-items: center; /* alinha as caixas no centro (verticalmente) */
+    justify-content: center; /* alinha as caixas no centro (horizontalmente) */
+
+}
+
+.box {
+    flex-basis: 25%;
+    background-color: #000000;
+    margin: 10px; 
+    /*margin: 40px 10px; aplica em eixo X e Y. Nesse exemplo ficaria 40px em cima e em baixo e 10px na direita e esquerda*/
+    border: 1px solid #cccccc;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center ;
+            
+}
+
+.box span {
+    align-self: center;
+}
+
+.box-1 {
+    align-self: flex-start;
+    height: 60px;
+}
+
+.box-2 {
+    height: 70px;
+}
+
+.box-3 {    
+    align-self: flex-end;
+    height: 50px;
+}
+
+.box-4 {
+    align-self: flex-start;
+    height: 80%;
+}
