@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-width: 500px;
+    min-height: 500px;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(198, 211, 134);
+}
+ 
+body, input, button {
+    font-size: 14px;
+    font-family: arial,sans-serif;
+    color: #222;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    background-color: rgb(105, 121, 165);
+}
+
+.flex-container > * {
+    flex: 1 100%;
+}
+
+.flex-header-direita {
+    background-color: rgb(255, 255, 255);
+    padding: 6px;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex-header-conteudo {
+    display: flex;
+    align-items: center;
+    padding: 0 4px 0 32px;
+    height: 48px;
+}
+
+.header-links {
+    text-decoration: none;
+    color: black;
+    padding-left: 15px;
+    font-size: 13px;
+}
+
+.header-links a:hover {
+    text-decoration: underline;
+}
+
+#menu-botoes {
+    display: flex;
+    align-items: center;
+}
+
+#botao-login {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    padding: 9px 15px;
+    min-width: 80px;    
+    background: #1a73e8;
+    border: 1px solid transparent;
+    font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: .25px;
+    line-height: 16px;
+    margin-left: 10px;
+    margin-right: 8px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    display: flex;
+}
+
+#menu-padding {
+    display: flex;
+    padding: 4px;
+    max-width: 48px;
+    max-height: 48px;
+}
+
+#menu-imagem {
+    cursor: pointer;
+    padding: 8px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+}
+
+#menu-imagem svg {
+    max-height: 24px;
+    max-width: 24px;
+}
+
+.flex-logo {
+    background-color: teal;
+    min-height: 92px;
+    max-height: 290px;
+    height: calc(100% - 560px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-pesquisa {
+
+}
+
+.flex-footer {
+    background-color: tomato;
+}

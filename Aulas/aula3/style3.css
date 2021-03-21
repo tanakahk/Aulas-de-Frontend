@@ -19,7 +19,7 @@ body {
 
 .container {
     height: 100%; /*com o vh é possível quebrar os conteúdos, o layout não vai esticar na página. vh = % em medidas. Da para definir largura usando o vw no lugar do vh.*/
-    width: 800px; /*antes era 1120px*/
+    width: 900px; /*antes era 1120px*/
     background-color: rgb(105, 121, 165);
     margin: auto;
 }

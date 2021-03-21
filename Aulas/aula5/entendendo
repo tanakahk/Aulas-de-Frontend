@@ -1,0 +1,16 @@
+<div id="app" style="position: absolute; width: 100%; height: 100%;">
+    <div style="border: 1px solid blue; display: flex justify-content: space-between;">
+        Eu sou o header
+        <div style="border: 1 px solid black;">
+            menu
+        </div>
+    </div>
+
+    <div style="border: 1px solid green;">
+        Eu sou o body
+    </div>
+
+    <div style="border: 1px solid pink;">
+        Eu sou o footer
+    </div>
+</div>

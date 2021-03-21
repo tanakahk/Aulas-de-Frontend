@@ -1,0 +1,6 @@
+1. Cria objetos para entender a estrutura
+2. Criar componentes na pagina
+    1. 'header', 'body', 'footer'
+    2. Colocar componentes dentro do header: menu
+3. Criar a tradução instantânea de 'js' <> 'html'
+4. Ao criar o esqueleto da página, deixar o 'body' ocupando o espaço vazio da página (ocupando a página inteira).
