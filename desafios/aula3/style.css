@@ -14,20 +14,15 @@ body {
 }
  
 body, input, button {
-    font-size: 14px;
     font-family: arial,sans-serif;
     color: #222;
 }
 
 .flex-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     height: 100%;
     background-color: rgb(105, 121, 165);
-}
-
-.flex-container > * {
-    flex: 1 100%;
 }
 
 .flex-header-direita {
@@ -48,7 +43,7 @@ body, input, button {
 
 .header-links {
     text-decoration: none;
-    color: black;
+    color: rgba(0,0,0,0.87);
     padding-left: 15px;
     font-size: 13px;
 }
@@ -104,17 +99,25 @@ body, input, button {
 }
 
 .flex-logo {
-    background-color: teal;
+    background-color: rgb(255, 255, 255);
+    font-size: 0px;
+    height: calc(100% - 560px);
+    height: calc(100vh - 560px);
     min-height: 92px;
     max-height: 290px;
-    height: calc(100% - 560px);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
+}
+
+.logo-imagem {
+    height: 92px;
+    width: 272px;
 }
 
 .flex-pesquisa {
-
+    background-color: cornflowerblue;
 }
 
 .flex-footer {
