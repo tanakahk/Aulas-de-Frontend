@@ -19,10 +19,12 @@ body, input, button {
 }
 
 .flex-container {
+    background-color: rgb(105, 121, 165);
     display: flex;
     flex-flow: column nowrap;
     height: 100%;
-    background-color: rgb(105, 121, 165);
+    width: 100%;
+    position: absolute;
 }
 
 .flex-header-direita {
@@ -42,7 +44,8 @@ body, input, button {
 }
 
 .header-links {
-    text-decoration: none;
+    color: inherit;          /* eu tinha colocado text-decoration: none; */
+    text-decoration: inherit;
     color: rgba(0,0,0,0.87);
     padding-left: 15px;
     font-size: 13px;
@@ -116,8 +119,25 @@ body, input, button {
     width: 272px;
 }
 
-.flex-pesquisa {
+.flex-centraliza-area-pesquisa {
     background-color: cornflowerblue;
+    font-size: 0px;
+    padding: 20px;
+    max-height: 160px;
+    display: flex;
+    flex-flow: column nowrap;
+    flex-shrink: 0;
+    align-items: center;
+    
+}
+
+.box-itens-pesquisa {
+    height: 140px;
+    padding: 6px 0 0;
+    min-width: 460px;
+    max-width: 584px;
+    
+
 }
 
 .flex-footer {
