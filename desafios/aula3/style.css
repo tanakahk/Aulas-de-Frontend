@@ -9,23 +9,23 @@ html, body {
     padding: 0;
 }
 
-body {
-    background-color: rgb(198, 211, 134);
-}
- 
 body, input, button {
     font-family: arial,sans-serif;
     color: #222;
 }
 
 .flex-container {
-    background-color: rgb(105, 121, 165);
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-flow: column nowrap;
     height: 100%;
     width: 100%;
     position: absolute;
 }
+
+/* ---------------------------------------------------- */
+/* ------------------------Menu------------------------ */
+/* ---------------------------------------------------- */
 
 .flex-header-direita {
     background-color: rgb(255, 255, 255);
@@ -44,14 +44,13 @@ body, input, button {
 }
 
 .header-links {
-    color: inherit;          /* eu tinha colocado text-decoration: none; */
     text-decoration: inherit;
     color: rgba(0,0,0,0.87);
     padding-left: 15px;
     font-size: 13px;
 }
 
-.header-links a:hover {
+.header-links:hover {
     text-decoration: underline;
 }
 
@@ -86,6 +85,9 @@ body, input, button {
     padding: 4px;
     max-width: 48px;
     max-height: 48px;
+    fill: currentColor;
+    color: #5f6368;
+
 }
 
 #menu-imagem {
@@ -100,6 +102,10 @@ body, input, button {
     max-height: 24px;
     max-width: 24px;
 }
+
+/* ---------------------------------------------------- */
+/* ----------------------- Logo ----------------------- */
+/* ---------------------------------------------------- */
 
 .flex-logo {
     background-color: rgb(255, 255, 255);
@@ -119,27 +125,211 @@ body, input, button {
     width: 272px;
 }
 
+/* ---------------------------------------------------- */
+/* --------------------- Pesquisa --------------------- */
+/* ---------------------------------------------------- */
+
 .flex-centraliza-area-pesquisa {
-    background-color: cornflowerblue;
-    font-size: 0px;
-    padding: 20px;
-    max-height: 160px;
+    background-color: rgb(255, 255, 255);
+    padding: 26px 20px 0 20px;
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
-    flex-shrink: 0;
+    flex: 0 0;
     align-items: center;
-    
+
 }
 
-.box-itens-pesquisa {
-    height: 140px;
-    padding: 6px 0 0;
-    min-width: 460px;
+.limita-area-pesquisa {
+    background-color: rgb(255, 255, 255);
+    height: 180px;
+    min-width: 458px;
+    width: 100%;
     max-width: 584px;
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 0;
+}
+
+.area-pesquisa {
+    padding: 5px 8px 0 14px;
+    display: flex;
+    flex: 1;
+    max-height: 44px;
+    background: #fff;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
     
+    
+}
+
+/* ----------------------- Lupa ----------------------- */
+
+.area-lupa {
+    display: flex;
+    align-items: center;
+    padding-right: 13px;
+    margin-top: -5px;
+}
+
+.lupa {
+    margin: auto;
+    font-size: 14px;
+}
+
+.span-lupa {
+    margin-top: 3px;
+    color: #9aa0a6;
+    fill: currentColor;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
 
 }
+
+/* ----------------------- Texto ---------------------- */
+
+.area-texto {
+    margin-top: -5px;
+    display: flex;
+    flex: 100%;
+    max-width: 447px;   
+}
+
+.input-texto {
+    display: flex;
+    flex: 100%;
+    min-width: 323px;
+    height: 42px;
+    color: rgba(0,0,0,.87);
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+/* -------------- Botões de Teclado e Voz ------------- */
+
+.area-botoes-teclado-voz {
+    display: flex;
+    flex: 0 0 auto;
+    margin-top: -5px;
+    align-items: stretch;
+    width: 80px;
+}
+
+/* ----------------- Botão de Teclado ----------------- */
+
+.area-icone-pesquisa {
+    cursor: pointer;
+    align-items: center;
+    outline: none;
+    padding: 0 8px;
+    width: 40px;
+    height: 44px;
+    line-height: 44px;
+}
+
+.span-teclado {
+    background: url(//www.gstatic.com/inputtools/images/tia.png) no-repeat center;
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
+
+.img-teclado {
+    visibility: hidden;
+}
+
+/* ------------------- Botão de Voz ------------------- */
+
+.mic {
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
+
+/* ---------------- Botões de Pesqusia ---------------- */
+
+.area-botoes-pesquisa {
+    height: 88px;
+    padding: 18px 0 0 0;
+}
+
+.botoes-pesquisa {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    margin: 11px 4px;
+    padding: 0 16px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* ---------------------------------------------------- */
+/* ---------------------- Footer ---------------------- */
+/* ---------------------------------------------------- */
 
 .flex-footer {
-    background-color: tomato;
+    background: #f2f2f2;
+    display: flex;
+    flex-shrink: 0;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+}
+
+.brasil {
+    padding: 15px 30px;
+    border-bottom: 1px solid #dadce0;
+    font-size: 15px;
+    color: rgba(0,0,0,.54);
+    width: 100%;
+}
+
+.menu-footer-principal {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.menu-footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1200px) {
+    .menu-footer-principal {
+    justify-content: space-evenly;
+}}
+
+@media only screen and (max-width: 1200px) {
+    .menu-footer {
+    justify-content: space-evenly;
+}}
+
+.link-footer {
+    color: #70757a;
+    display: block;
+    padding: 15px;
+    font-size: 14px;
+    white-space: nowrap;
+    text-decoration: inherit;
+    cursor: pointer;
+}
+
+.link-footer:hover {
+    text-decoration: underline;
+}
+
+.footer-config {
+    font-size: 14px;
+    cursor: pointer;
+    color: #70757a;
+    padding: 15px;
+    border: none;
+    background: none;
+    align-items: flex-start;
 }
