@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body { 
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body> 
+    <div id="app" style="background-color: grey; min-width: 500px; min-height: 500px; width: 100%; height: 100%; display: flex; position: absolute; flex-flow: column nowrap;">
+        Sou o container APP
+        <div style="background-color: red; height: 13%; width: 100%; display: flex; flex-flow: row nowrap;">
+            <div style="flex: 1 0; justify-content: flex-start">
+                Sou o header
+            </div>
+            <div style="background-color: #9b58c2; height: 100%; width: 300px; display: flex; align-items: center; justify-content: flex-end; padding: 0 20px;">
+                Sou o menu
+            </div>
+        </div>
+        <div style="width: 100%; flex: 1 0;">
+            Sou o body
+        </div>
+        <div style="background-color: green; height: 13%; width: 100%; justify-content: flex-end;">
+            Sou o footer
+        </div>
+    </div>
+</body>
+</html>
