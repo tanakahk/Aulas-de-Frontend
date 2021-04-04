@@ -1,0 +1,24 @@
+Desafio final: Loja virtual
+
+Primeiro módulo: imersão frontend
+    * cadastro de itens
+        a. id
+        b. brand (marca)
+        c. title (título)
+        d. description (descrição)
+        e. price (preço)
+        f. count (quantidade)
+        g. status: ativo ou inativo
+        h. images (imagens)
+    * carrinho para finalizar venda
+
+Segundo módulo: Framework
+    * Migrar a loja virtual para o vue
+    * Adicionar formas de pagamento ao checkout
+
+Terceiro módulo: Backend
+    * API
+    * Banco de dados
+    * Integração final com gateway de pagamentos
+    * Integração com frontend
+    
