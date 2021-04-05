@@ -14,8 +14,8 @@ var App = {
     // é o que controla o site, ele que executa as ações do site
     controllers: {
         setStyle: function(el, obj){
-            /* console.log(el);
-            console.log(obj); */
+            // console.log(el);
+            // console.log(obj); 
 
             var keys = Object.keys(obj);
             // console.log(keys);
@@ -38,6 +38,7 @@ var App = {
             console.log("vamos renderizar os componentes");
 
             // console.log(this);
+            // console.log(App);
             // this.app.innerHTML = "Hello World";
             /* for (var i = 0; i < 1000; i++) {
                 this.app.innerHTML = "Hello World" + i;            
