@@ -1,2 +1,2 @@
 # aulas de frontend
- Aulas de Frontend com o Yoyo
+ Aulas de Frontend
