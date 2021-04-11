@@ -1,0 +1,13 @@
+1. Javascript é uma linguagem dinâmicamente tipada: os tipos não são declarados no código e, portanto, conhecidos/checados em tempo de execução. 
+  (
+  "https://robsoncastilho.com.br/2019/11/16/linguagens-estaticamente-ou-dinamicamente-tipadas/", 
+  "https://dev.to/joaoava/tipagem-fraca-forte-dinamica-e-estatica-g8k"
+  ).
+
+2. 'let' é como o 'var'
+
+3. 'const' só pode ser definida 1 vez, diferente do var e do let.
+
+4. em Javascript não é possível definir variáveis privadas, uma boa prática é colocar '_' (underline) antes do nome. 
+
+5. quando for criar uma classe (css) para um elemento do Javascript, usar '__' (2 underlines) ou '--' (2 traços) para diferenciar do css do html. (boa prática)
