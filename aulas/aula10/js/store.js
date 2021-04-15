@@ -26,7 +26,14 @@ var store = {
           price: 510,
           count: 500,
           status: "Active",
-          images: [],
+          images: [
+            "https://images4.kabum.com.br/produtos/fotos/95874/95874_1523014871_index_gg.jpg",
+            "https://images4.kabum.com.br/produtos/fotos/95874/95874_1_1523014822_gg.jpg",
+            "https://images4.kabum.com.br/produtos/fotos/95874/95874_2_1523014822_gg.jpg",
+            "https://images4.kabum.com.br/produtos/fotos/95874/95874_3_1523014822_gg.jpg",
+            "https://images4.kabum.com.br/produtos/fotos/95874/95874_1523014822_gg.jpg",
+
+          ],
         },
         {
           id: 3,
@@ -36,7 +43,14 @@ var store = {
           price: 420,
           count: 500,
           status: "Active",
-          images: [],
+          images: [
+            "https://images7.kabum.com.br/produtos/fotos/128647/controle-microsoft-xbox-sem-fio-preto-qat-00007_1601326879_gg.jpg",
+            "https://images7.kabum.com.br/produtos/fotos/128647/controle-microsoft-xbox-sem-fio-preto-qat-00007_1601326881_gg.jpg",
+            "https://images7.kabum.com.br/produtos/fotos/128647/controle-microsoft-xbox-sem-fio-preto-qat-00007_1601326878_gg.jpg",
+            "https://images7.kabum.com.br/produtos/fotos/128647/controle-microsoft-xbox-sem-fio-preto-qat-00007_1601326883_gg.jpg",
+            "https://images7.kabum.com.br/produtos/fotos/128647/controle-microsoft-xbox-sem-fio-preto-qat-00007_1601326882_gg.jpg",
+            "https://images7.kabum.com.br/produtos/fotos/128647/controle-microsoft-xbox-sem-fio-preto-qat-00007_1601326880_gg.jpg",
+          ],
         },
         {
           id: 4,
@@ -46,7 +60,11 @@ var store = {
           price: 460,
           count: 800,
           status: "Active",
-          images: [],
+          images: [
+            "https://images8.kabum.com.br/produtos/fotos/85198/85198_index_gg.jpg",
+            "https://images8.kabum.com.br/produtos/fotos/85198/85198_1484306114_gg.jpg",
+            "https://images8.kabum.com.br/produtos/fotos/85198/85198_1484306119_gg.jpg",
+          ],
         }, 
         {
           id: 5,
@@ -56,7 +74,15 @@ var store = {
           price: 1800,
           count: 80,
           status: "Active",
-          images: [],
+          images: [
+            "https://images8.kabum.com.br/produtos/fotos/130218/monitor-lg-led-27-4k-uhd-ips-hdmi-displayport-freesync-altura-ajustavel-27mu58p-b-awz_1606477437_gg.jpg",
+            "https://images8.kabum.com.br/produtos/fotos/130218/monitor-lg-led-27-4k-uhd-ips-hdmi-displayport-freesync-altura-ajustavel-27mu58p-b-awz_1606477435_gg.jpg",
+            "https://images8.kabum.com.br/produtos/fotos/130218/monitor-lg-led-27-4k-uhd-ips-hdmi-displayport-freesync-altura-ajustavel-27mu58p-b-awz_1606477436_gg.jpg",
+            "https://images8.kabum.com.br/produtos/fotos/130218/monitor-lg-led-27-4k-uhd-ips-hdmi-displayport-freesync-altura-ajustavel-27mu58p-b-awz_1603736567_gg.jpg",
+            "https://images8.kabum.com.br/produtos/fotos/130218/monitor-lg-led-27-4k-uhd-ips-hdmi-displayport-freesync-altura-ajustavel-27mu58p-b-awz_1603736564_gg.jpg",
+            "https://images8.kabum.com.br/produtos/fotos/130218/monitor-lg-led-27-4k-uhd-ips-hdmi-displayport-freesync-altura-ajustavel-27mu58p-b-awz_1603736562_gg.jpg",
+            "https://images8.kabum.com.br/produtos/fotos/130218/monitor-lg-led-27-4k-uhd-ips-hdmi-displayport-freesync-altura-ajustavel-27mu58p-b-awz_1603736565_gg.jpg",
+          ],
         }, 
         {
           id: 6,
@@ -66,7 +92,12 @@ var store = {
           price: 1320,
           count: 50,
           status: "Active",
-          images: [],
+          images: [
+            "https://images0.kabum.com.br/produtos/fotos/111960/monitor-gamer-acer-led-23-6-full-hd-hdmi-displayport-free-sync-165hz-0-5ms-inclinacao-ajustavel-preto-vermelho-kg241q-sbiip_1588007082_gg.jpg",
+            "https://images0.kabum.com.br/produtos/fotos/111960/monitor-gamer-acer-led-23-6-full-hd-hdmi-displayport-free-sync-165hz-0-5ms-inclinacao-ajustavel-preto-vermelho-kg241q-sbiip_1588007081_gg.jpg",
+            "https://images0.kabum.com.br/produtos/fotos/111960/monitor-gamer-acer-led-23-6-full-hd-hdmi-displayport-free-sync-165hz-0-5ms-inclinacao-ajustavel-preto-vermelho-kg241q-sbiip_1588007084_gg.jpg",
+            "https://images0.kabum.com.br/produtos/fotos/111960/monitor-gamer-acer-led-23-6-full-hd-hdmi-displayport-free-sync-165hz-0-5ms-inclinacao-ajustavel-preto-vermelho-kg241q-sbiip_1588007083_gg.jpg",
+          ],
         }, 
         /* 
         {
@@ -81,5 +112,28 @@ var store = {
         }, 
         */
       ],
+    },
+
+    getters: {
+      productById: function(productId){
+        var products = App.store.state.products;
+
+        for (let i = 0; i < products.length; i++) {
+          var product = products[i];
+
+          if (product.id === productId) {
+            return product;            
+          };
+        };
+
+        return null;
+      },
+    },
+
+    mutations: {
+      changeCount: function (productId, newCount) {
+        var product = App.store.getters.productById(productId);
+        product.count = newCount;
+      },
     },
   };

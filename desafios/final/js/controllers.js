@@ -41,7 +41,7 @@ var controllers = {
 
     // -------------------- Produtos renderizados no Body
     this.setStyle(App.elements.bodyProducts, {
-      backgroundColor: "#888",
+      backgroundColor: "#000",
       display: "flex",
       flexFlow: "row wrap",
       flex: "1 0",
@@ -84,60 +84,43 @@ var controllers = {
     };
   },
 
-  renderImages: function(parent, images) {
-    for (let i = 0; i < images.length; i++) {
-      var imgURL = images[i];
-
-      var el = document.createElement("img");
-      el.src = imgURL;
-      // el.classList.add("product-item-img");
-
-      parent.appendChild(el);      
-    }
-  },
-
   renderAllProducts: function() {
     console.log("Vamos renderizar todos os produtos");
     var products = App.store.state.products;
 
-    console.log(products.length);
-    for (let i = 0; i < products.length; i++) {
+    for(var i=0; i<products.length; i++) {
       var product = products[i];
-      
       var el = document.createElement("div");
-      el.classList.add("product-item");
+      var elBox = document.createElement("div");
 
-      var imgContainer = document.createElement("div");
-      imgContainer.style.width = "300px";
-      imgContainer.style.height = "300px";
-      // imgContainer.style.border = "1px solid black";
-      var carrossel = new Carrossel({el: imgContainer, images: product.images});
-      el.appendChild(imgContainer);
+      // -------------------- elementos do produto que vai dentro da caixa
+      el.innerHTML = product.title;
+        this.setStyle(el, {
+          display: "flex",
+          fontSize: "14px",
+          fontFamily: "Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif",
+          alignItems: "flex-end",
+          justifyContent: "center",
+          width: "100%",
+          height: "100%",
+      });
 
-      var title = document.createElement("div");
-      title.innerHTML = product.title;
-      el.appendChild(title);
-
-      var price = document.createElement("div");
-      price.innerHTML = `R$ ${product.title}`;
-      el.appendChild(price);
-
-      var count = document.createElement("div");
-      count.innerHTML = `Qtd: ${product.count}`;
-      el.appendChild(count);
-
-      var buyBtn = document.createElement("button");
-      buyBtn.innerHTML = "Comprar";
-      buyBtn.id = product.id;
-      buyBtn.onclick = App.events.buy;
-      el.appendChild(buyBtn);
-
-      console.log("el é ...", el);
+      // -------------------- Caixa onde vai o produto
+      this.setStyle(elBox, {
+        border: "1px solid #e6e6e6",
+        backgroundColor: "lightgreen",
+        borderRadius: "5px",
+        height: "211px",
+        width: "211px",
+        margin: "5px",
+        padding: "8px",
+        justifyContent: "center",
+      });
 
       App.elements.products[product.id] = el;
-      App.elements.bodyProducts.appendChild(el);
-    }
-
+      elBox.appendChild(el);
+      App.elements.bodyProducts.appendChild(elBox);
+    };
     console.log("Produtos renderizados");
   },
 };

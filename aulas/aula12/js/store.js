@@ -112,6 +112,8 @@ var store = {
       }, 
       */
     ],
+
+    myProducts: [],
   },
 
   getters: {
@@ -134,6 +136,17 @@ var store = {
     changeCount: function (productId, newCount) {
       var product = App.store.getters.productById(productId);
       product.count = newCount;
+    },
+
+    buy: function(product){
+      var myProduct = {
+        productId: product.id,
+        price: product.price,
+        count: 1,
+      };
+      
+      // store.state.myProducts.push(product);
+      store.state.myProducts.push(myProduct);
     },
   },
 };

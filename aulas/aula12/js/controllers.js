@@ -36,22 +36,24 @@ var controllers = {
       alignItems: "center",
       padding: "60px 15px",
     });
-    App.elements.body.innerHTML = "<h1 style='margin-top: 0;'>Ofertas do dia !!!</h1>"
+    // App.elements.body.innerHTML = "<h1>Todos os Produtos</h1>"
     App.elements.app.appendChild(App.elements.body);
 
+    // -------------------- Meus Produtos renderizados no Body
+    App.elements.bodyMyProductsLabel.innerHTML = "<h1>Meus Produtos:</h1>";
+    App.elements.body.appendChild(App.elements.bodyMyProductsLabel);
+
+    App.elements.bodyMyProducts.classList.add("product-container");
+    App.elements.body.appendChild(App.elements.bodyMyProducts);
+
     // -------------------- Produtos renderizados no Body
-    this.setStyle(App.elements.bodyProducts, {
-      backgroundColor: "#888",
-      display: "flex",
-      flexFlow: "row wrap",
-      flex: "1 0",
-      border: "1px solid darkblue",
-      borderRadius: "5px",
-      maxWidth: "1580px",
-      padding: "5px",
-      justifyContent: "center",
-    });
+    App.elements.bodyProductsLabel.innerHTML = "<h1>Todos os Produtos:</h1>";
+    App.elements.body.appendChild(App.elements.bodyProductsLabel);
+
+    App.elements.bodyProducts.classList.add("product-container");
     App.elements.body.appendChild(App.elements.bodyProducts);
+
+
 
     // -------------------- Footer
     this.setStyle(App.elements.footer, {
@@ -108,7 +110,7 @@ var controllers = {
       el.classList.add("product-item");
 
       var imgContainer = document.createElement("div");
-      imgContainer.style.width = "300px";
+      imgContainer.style.width = "200px";
       imgContainer.style.height = "300px";
       // imgContainer.style.border = "1px solid black";
       var carrossel = new Carrossel({el: imgContainer, images: product.images});
@@ -116,14 +118,17 @@ var controllers = {
 
       var title = document.createElement("div");
       title.innerHTML = product.title;
+      title.setAttribute("key", "title");
       el.appendChild(title);
 
       var price = document.createElement("div");
       price.innerHTML = `R$ ${product.title}`;
+      price.setAttribute("key", "price");
       el.appendChild(price);
 
       var count = document.createElement("div");
       count.innerHTML = `Qtd: ${product.count}`;
+      count.setAttribute("key", "count");
       el.appendChild(count);
 
       var buyBtn = document.createElement("button");

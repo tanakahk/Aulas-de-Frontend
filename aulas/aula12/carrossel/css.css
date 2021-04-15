@@ -1,0 +1,26 @@
+.__carrossel-container {
+  display: flex;
+  width: 300px;
+  align-items: center;
+  /* overflow-x: auto; */ /* auto ou scroll, mas é preferível o scroll */
+}
+
+.__carrossel-img {
+  width: 100%;
+}
+
+.__carrossel-move-left {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 100px;
+  text-align: center;
+  background: gray;
+}
+
+.__carrossel-move-right {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 100px;
+  text-align: center;
+  background: gray;
+}

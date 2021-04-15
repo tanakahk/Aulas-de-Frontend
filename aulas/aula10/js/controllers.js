@@ -76,6 +76,7 @@ var controllers = {
     for (var i=0; i<products.length; i++) {
         var product = products[i];
         var el = document.createElement("div");
+        var imgContainer = document.createElement("div");
 
         // el.id = product.id;  //alternativa para referenciar um produto, mas custa caro para a aplicação (pode deixar ela lenta)
         // el.innerHTML = product.title;
@@ -84,7 +85,13 @@ var controllers = {
         el.classList.add("product-item");
         // el.classList.add("product2");
 
-        this.renderImages(el, product.images);
+        this.setStyle(imgContainer, {
+          width: "100px",
+          display: "flex",
+          overflowX: "scroll",
+        });
+        this.renderImages(imgContainer, product.images);
+        el.appendChild(imgContainer);
 
         var title = document.createElement("div");
         title.innerHTML = product.title;
@@ -98,7 +105,7 @@ var controllers = {
         count.innerHTML = `Qtd: ${product.count}`;
         el.appendChild(count);
 
-        var buyBtn = document.createElement("div");
+        var buyBtn = document.createElement("button");
         buyBtn.innerHTML = "Comprar";
         buyBtn.id = product.id;
         buyBtn.onclick = App.events.buy;

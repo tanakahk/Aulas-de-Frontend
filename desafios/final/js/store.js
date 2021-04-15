@@ -113,27 +113,4 @@ var store = {
       */
     ],
   },
-
-  getters: {
-    productById: function(productId){
-      var products = App.store.state.products;
-
-      for (let i = 0; i < products.length; i++) {
-        var product = products[i];
-
-        if (product.id === productId) {
-          return product;            
-        };
-      };
-
-      return null;
-    },
-  },
-
-  mutations: {
-    changeCount: function (productId, newCount) {
-      var product = App.store.getters.productById(productId);
-      product.count = newCount;
-    },
-  },
 };
