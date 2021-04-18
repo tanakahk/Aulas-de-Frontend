@@ -1,0 +1,18 @@
+.__carrossel-container {
+  display: flex;
+  width: 300px;
+  align-items: center;
+  /* overflow-x: auto; */ /* auto ou scroll, mas é preferível o scroll */
+}
+
+.__carrossel-img {
+  width: 100%;
+  border-radius: 5px;
+  border: 1.5px solid black;
+}
+
+.__carrossel-move {
+  cursor: pointer;
+  width: 20px;
+  text-align: center;
+}

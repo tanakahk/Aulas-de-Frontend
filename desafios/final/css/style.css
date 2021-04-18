@@ -1,0 +1,144 @@
+*{
+  box-sizing: border-box;
+}
+
+html, body {
+  min-width: 500px;
+  min-height:500px;
+  margin: 0;
+  padding: 0;
+}
+
+.div-banner {
+  display: flex;
+  justify-content: center;
+  background-color: #201647;
+  width: 100%;
+  height: 230px;
+}
+
+.banner {
+  /* height: 200px; */
+}
+
+.__createElements-app {
+position: absolute;
+width: 100%;
+height: 100%;
+display: flex;
+flex: 1 0;
+flex-direction: column;
+}
+
+.__createElements-header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fff;
+  color: #201647;
+  padding: 0 20px;
+  align-items: center;
+  min-height: 50px;
+  max-height: 50px;
+}
+
+.__createElements-body {
+  display: flex;
+  color: #fff;
+  background-color: #201647;
+  /* background-color: lightgrey; */
+  flex: 1 0;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 60px 15px;
+}
+
+.__createElements-body h1 {
+  font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+  letter-spacing: .25px;
+  line-height: 16px;
+}
+
+.__createElements-bodyProducts {
+  background-color: #201647;
+  color: #000;
+  display: flex;
+  flex-flow: row wrap;
+  border-radius: 5px;
+  max-width: 1590px;
+  padding: 9px;
+  justify-content: center;
+  align-content: center;
+}
+
+.__createElements-footer{
+  background-color: #fff;
+  color: #201647;
+  border: 1px solid white;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 20px;
+  align-items: center;
+  min-height: 50px;
+  max-height: 50px;
+}
+
+.__renderAllProducts-productItem{
+  display: flex;
+  flex-flow: column nowrap;
+  /* background-color: rgb(94, 230, 16); */
+  background-color: #f48330;
+  border-radius: 5px;
+  width: 211px;
+  margin: 5px;
+  padding: 8px;
+}
+
+.__renderAllProducts-divFlexGrowColumn{
+  display: flex;
+  flex: 1 0;
+  flex-flow: column nowrap;
+}
+
+.__renderAllProducts-textContainer {
+  margin: 20px 0 10px 0;
+}
+
+.__renderAllProducts-buyBtn {
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  padding: 9px 15px;
+  min-width: 80px;
+  background: #000;
+  border: 1px solid transparent;
+  font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: .25px;
+  line-height: 16px;
+  border-radius: 4px;
+}
+
+/*
+.el {
+  display: "flex",
+  fontSize: "14px",
+  fontFamily: "Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif",
+  alignItems: "flex-end",
+  justifyContent: "center",
+  width: "100%",
+  height: "100%",
+}
+
+.elbox{
+  border: "1px solid #e6e6e6",
+  backgroundColor: "lightgreen",
+  borderRadius: "5px",
+  height: "211px",
+  width: "211px",
+  margin: "5px",
+  padding: "8px",
+  justifyContent: "center",
+} */

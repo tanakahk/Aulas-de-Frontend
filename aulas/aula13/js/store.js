@@ -145,7 +145,6 @@ var store = {
         count: 1,
       };
       
-      // store.state.myProducts.push(product);
       store.state.myProducts.push(myProduct);
     },
   },

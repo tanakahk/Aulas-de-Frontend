@@ -36,7 +36,6 @@ var controllers = {
       alignItems: "center",
       padding: "60px 15px",
     });
-    // App.elements.body.innerHTML = "<h1>Todos os Produtos</h1>"
     App.elements.app.appendChild(App.elements.body);
 
     // -------------------- Meus Produtos renderizados no Body
@@ -69,12 +68,6 @@ var controllers = {
     App.elements.app.appendChild(App.elements.footer);
 
 
-    /* 
-    this.setStyle(App.elements.x, {
-      
-    });
-    App.elements.y.appendChild(App.elements.x); 
-    */
     console.log("Componentes renderizados");
   },
 
@@ -102,7 +95,6 @@ var controllers = {
     console.log("Vamos renderizar todos os produtos");
     var products = App.store.state.products;
 
-    console.log(products.length);
     for (let i = 0; i < products.length; i++) {
       var product = products[i];
       
@@ -112,7 +104,6 @@ var controllers = {
       var imgContainer = document.createElement("div");
       imgContainer.style.width = "200px";
       imgContainer.style.height = "300px";
-      // imgContainer.style.border = "1px solid black";
       var carrossel = new Carrossel({el: imgContainer, images: product.images});
       el.appendChild(imgContainer);
 
@@ -122,7 +113,7 @@ var controllers = {
       el.appendChild(title);
 
       var price = document.createElement("div");
-      price.innerHTML = `R$ ${product.price}`;
+      price.innerHTML = `R$ ${product.title}`;
       price.setAttribute("key", "price");
       el.appendChild(price);
 
@@ -137,12 +128,27 @@ var controllers = {
       buyBtn.onclick = App.events.buy;
       el.appendChild(buyBtn);
 
-      console.log("el é ...", el);
-
       App.elements.products[product.id] = el;
       App.elements.bodyProducts.appendChild(el);
     }
 
     console.log("Produtos renderizados");
+  },
+
+  renderMyProducts: function(){
+    // Pega todos os nossos produtos
+    var myProducts = App.store.state.myProducts;
+
+    // Pega a referência de todos os nossos produtos já renderizados
+    var els = App.elements.myProducts;
+    
+    console.log("vamos renderizar nossos produtos", myProducts);
+
+    for (let i = 0; i < myProducts.length; i++) {
+      var myProduct = myProducts[i];
+      var product = App.store.getters.productById(myProduct.productId)
+      // console.log("product", myProduct);
+      console.log(myProduct, product);
+    }
   },
 };
