@@ -7,25 +7,19 @@ var App = {
     console.log("Fim do app");
   },
 
-  helpers: {
-    childFinder: function(productId, key){
-      const div = App.elements.products[productId];
+  // Ajudadores do código, pedaços de lógica
+  helpers: helpers,
 
-      for (let i = 0; i < div.childNodes.length; i++) {
-        var child = div.childNodes[i];
-
-        if (child.getAttribute("key") === key){
-          return child;
-        }
-      }
-    }
-  },
-
+  // O estado da aplicação, onde guarda os dados não persistentes.
   store: store,
-  events: events,
-  controllers: controllers,
-  elements: elements,
-  
-};
 
-App.init();
+  // Escutar os eventos do navegador
+  events: events,
+
+  // Controla o site 
+  // controllers: controllers,
+  // o controller foi injetado direto no App, então ele tem q ser referênciado no App antes do js.js e no arquivo controllers.js o início da primeira linha muda de "var controllers" para "App.controllers"
+
+  // Onde guarda a referência do elemento
+  elements: elements,
+};

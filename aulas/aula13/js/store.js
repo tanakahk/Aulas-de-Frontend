@@ -1,4 +1,7 @@
+// O store é projetado para a aplicação toda e é recomendável que ele seja utilizado apenas para leitura
 var store = {
+
+  // É onde é guardado todos os valores das variáveis
   state: {
     products: [
       {
@@ -7,7 +10,7 @@ var store = {
         title: "Notebook Lenovo Ideapad S145",
         description: "Notebook Lenovo Ideapad S145, Intel Core i7-1065G7, 8GB, SSD 256GB, 15.6´ Full HD, Dolby Audio, Windows 10 Home, Prata - 82DJ0000BR",
         price: 44000,
-        count: 100,
+        count: 10,
         status: "Active",
         images: [
           "https://images7.kabum.com.br/produtos/fotos/106997/notebook-lenovo-ultrafino-ideapad-s145-amd-ryzen-5-3500u-4gb-hd-1tb-windows-10-15-6-prata-81v70001br_notebook-lenovo-ultrafino-ideapad-s145-amd-ryzen-5-3500u-4gb-hd-1tb-windows-10-15-6-prata-81v70001br_1574102487_gg.jpg",
@@ -116,6 +119,7 @@ var store = {
     myProducts: [],
   },
 
+  // Busca algo do store, aplicando alguma lógica (função), diferente do helper.
   getters: {
     productById: function(productId){
       var products = App.store.state.products;
@@ -130,8 +134,21 @@ var store = {
 
       return null;
     },
+
+    myProductCount: function(productId) {
+      var count = 0;
+
+      for (let i = 0; i < store.state.myProducts.length; i++) {
+        var myProduct = store.state.myProducts[i];
+        if (myProduct.productId === productId) {
+          count++;
+        }
+      }
+      return count;
+    }
   },
 
+  // único lugar onde é possível alterar o state
   mutations: {
     changeCount: function (productId, newCount) {
       var product = App.store.getters.productById(productId);

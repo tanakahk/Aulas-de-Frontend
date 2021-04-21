@@ -1,4 +1,6 @@
-var controllers = {
+App.controllers = {
+
+  // Cria os elementos estáticos do webapp
   createElements: function(){
     console.log("Vamos renderizar os componentes");
 
@@ -71,6 +73,7 @@ var controllers = {
     console.log("Componentes renderizados");
   },
 
+  // deveria de ser um helper para poder ser usado em outros lugares
   setStyle: function(el, obj){
     var keys = Object.keys(obj);
     for (var i = 0; i < keys.length; i++) {
@@ -79,6 +82,7 @@ var controllers = {
     };
   },
 
+  // É um controlador que controla e renderiza os elementos.
   renderImages: function(parent, images) {
     for (let i = 0; i < images.length; i++) {
       var imgURL = images[i];
@@ -97,36 +101,7 @@ var controllers = {
 
     for (let i = 0; i < products.length; i++) {
       var product = products[i];
-      
-      var el = document.createElement("div");
-      el.classList.add("product-item");
-
-      var imgContainer = document.createElement("div");
-      imgContainer.style.width = "200px";
-      imgContainer.style.height = "300px";
-      var carrossel = new Carrossel({el: imgContainer, images: product.images});
-      el.appendChild(imgContainer);
-
-      var title = document.createElement("div");
-      title.innerHTML = product.title;
-      title.setAttribute("key", "title");
-      el.appendChild(title);
-
-      var price = document.createElement("div");
-      price.innerHTML = `R$ ${product.title}`;
-      price.setAttribute("key", "price");
-      el.appendChild(price);
-
-      var count = document.createElement("div");
-      count.innerHTML = `Qtd: ${product.count}`;
-      count.setAttribute("key", "count");
-      el.appendChild(count);
-
-      var buyBtn = document.createElement("button");
-      buyBtn.innerHTML = "Comprar";
-      buyBtn.id = product.id;
-      buyBtn.onclick = App.events.buy;
-      el.appendChild(buyBtn);
+      var el = this.createProduct(product);
 
       App.elements.products[product.id] = el;
       App.elements.bodyProducts.appendChild(el);
@@ -149,6 +124,61 @@ var controllers = {
       var product = App.store.getters.productById(myProduct.productId)
       // console.log("product", myProduct);
       console.log(myProduct, product);
+
+      if (els[product.id]) {
+        // Editar o produto
+        var child  = App.helpers.childFinder(App.elements.myProducts[product.id], "count");
+        if (child) {
+          var newCount = App.store.getters.myProductCount(product.id);
+
+          child.innerHTML = `Qtd: ${newCount}`;
+        }
+      }else{
+        var el = this.createProduct(product, true);
+        els[product.id] = el;
+        App.elements.bodyMyProducts.appendChild(el);
+      }
     }
+  },
+
+  createProduct: function(product, isMyList){
+    var el = document.createElement("div");
+    el.classList.add("product-item");
+
+    var imgContainer = document.createElement("div");
+    imgContainer.style.width = "200px";
+    imgContainer.style.height = "300px";
+    var carrossel = new Carrossel({el: imgContainer, images: product.images});
+    el.appendChild(imgContainer);
+
+    var title = document.createElement("div");
+    title.innerHTML = product.title;
+    title.setAttribute("key", "title");
+    el.appendChild(title);
+
+    var price = document.createElement("div");
+    price.innerHTML = `R$ ${product.price}`;
+    price.setAttribute("key", "price");
+    el.appendChild(price);
+
+    if (!isMyList){
+      var count = document.createElement("div");
+      count.innerHTML = `Qtd: ${product.count}`;
+      count.setAttribute("key", "count");
+      el.appendChild(count);
+
+      var buyBtn = document.createElement("button");
+      buyBtn.innerHTML = "Comprar";
+      buyBtn.id = product.id;
+      buyBtn.onclick = App.events.buy;
+      el.appendChild(buyBtn);
+    }else{
+      var count = document.createElement("div");
+      count.innerHTML = `Qtd: 1`;
+      count.setAttribute("key", "count");
+      el.appendChild(count);
+    }
+
+    return el;
   },
 };

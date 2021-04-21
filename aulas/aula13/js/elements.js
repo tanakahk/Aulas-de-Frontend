@@ -1,3 +1,4 @@
+// Declarar todos os elementos da página
 var elements = {
 app: document.getElementById("app"),
 header: document.createElement("div"),

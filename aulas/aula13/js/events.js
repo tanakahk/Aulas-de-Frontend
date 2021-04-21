@@ -31,7 +31,7 @@ var events = {
       App.store.mutations.changeCount(productId, newCount);
 
       // 2. Alterar o count direto no elemento
-      var child = App.helpers.childFinder(productId, "count");
+      var child = App.helpers.childFinder(App.elements.products[productId], "count"); // var child = App.helpers.childFinder(productId, "count");
       if (child) {
         child.innerHTML = `Qtd: ${newCount}`;
       }
