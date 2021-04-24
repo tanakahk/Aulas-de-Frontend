@@ -1,0 +1,33 @@
+quando se tem
+
+var obj = {
+  a: 1,
+  b: 2,
+  c: 3,
+}
+
+Object.keys(obj)  extrai só as chaves dos objetos, criando um array novo
+
+exemplo de retorno:  ["a", "b", "c"]
+
+--------------------//--------------------
+
+no controllers, no código:
+listaParaEsconder.find((p) => p.id === parseInt(productId))
+ 
+o find faz a mesma coisa da função include dentro de helpers.
+
+--------------------//--------------------
+
+Ordem da Aula 15
+
+1. Criar o objeto da categoria na lista de produtos
+2. Criar um getter onde retorna uma lista de marcas
+3. Criar o renderizador de marcas
+4. Criar um getter onde retorna os produtos filtrados
+5. Criar removedor dos produtos
+6. Renderizar os produtos
+7. Criar o escutador das marcas (onclick)
+    1. dispara um mutation para colocar o valor do filtro no state
+    2. Remove todos os produtos (removeAllProducts)
+    3. Renderiza apenas os produtos filtrados (renderAllProducts)
